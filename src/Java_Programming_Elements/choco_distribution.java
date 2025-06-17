@@ -1,7 +1,7 @@
 package Java_Programming_Elements;
 import java.util.*;
 public class choco_distribution {
-public static void main(String[] args) {
+    public static void main(String[] args) {
 		
         Scanner scanner = new Scanner(System.in);
 
@@ -14,9 +14,8 @@ public static void main(String[] args) {
 
         System.out.println("The number of chocolates each child gets is " + chocolatesPerChild + " and the number of remaining chocolates is " + remainingChocolates);
 
-        scanner.close();
-        
-        
+        scanner.close();    
     }
-
 }
+
+
