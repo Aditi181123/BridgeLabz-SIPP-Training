@@ -15,7 +15,7 @@ public class choco_distribution {
         System.out.println("The number of chocolates each child gets is " + chocolatesPerChild + " and the number of remaining chocolates is " + remainingChocolates);
 
         scanner.close();    
-    }
+    }
 }
 
 
