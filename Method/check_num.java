@@ -10,6 +10,7 @@ public class check_num {
 		
 		int check = checknum(n);
 		System.out.println(check);
+		sc.close();
 	}
 
 	private static int checknum(int n) {
