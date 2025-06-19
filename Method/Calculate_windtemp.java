@@ -13,6 +13,7 @@ public class Calculate_windtemp {
 		
 		double windchill = calculateWindChill(temp, windspeed);
 		System.out.println(windchill);
+		sc.close();
 		
 	}
 	public static double calculateWindChill(double temp, double windspeed) {
