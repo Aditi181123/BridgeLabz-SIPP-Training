@@ -66,5 +66,6 @@ public class WordsWithLengths {
             int length = Integer.parseInt(wordsWithLengths[i][1]); // Convert back to int for display
             System.out.println(word + "\t\t" + length);
         }
+        sc.close();
     }
 }
