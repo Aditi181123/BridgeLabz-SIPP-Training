@@ -13,7 +13,7 @@ class TextState {
 }
 
 class TextEditor {
-    private TextState head = null, tail = null, current = null;
+    private TextState head = null, current = null;
     private int size = 0;
     private final int MAX_HISTORY = 10;
 
@@ -26,12 +26,11 @@ class TextEditor {
         }
 
         if (current == null) {
-            head = tail = current = newState;
+            head = current = newState;
         } else {
             current.next = newState;
             newState.prev = current;
             current = newState;
-            tail = newState;
         }
 
         size++;
