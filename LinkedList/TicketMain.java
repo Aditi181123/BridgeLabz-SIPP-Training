@@ -1,6 +1,6 @@
 package LinkedList;
 
-import java.util.*;
+import java.util.Scanner;
 
 class Ticket {
     String ticketId, customerName, movieName, seatNumber, bookingTime;
@@ -27,13 +27,17 @@ class TicketReservationSystem {
             return;
         }
         Ticket temp = head;
-        while (temp.next != head) temp = temp.next;
+        while (temp.next != head) {
+			temp = temp.next;
+		}
         temp.next = newTicket;
         newTicket.next = head;
     }
 
     void removeTicket(String ticketId) {
-        if (head == null) return;
+        if (head == null) {
+			return;
+		}
         Ticket curr = head, prev = null;
         do {
             if (curr.ticketId.equals(ticketId)) {
@@ -43,7 +47,9 @@ class TicketReservationSystem {
                         return;
                     }
                     Ticket last = head;
-                    while (last.next != head) last = last.next;
+                    while (last.next != head) {
+						last = last.next;
+					}
                     head = head.next;
                     last.next = head;
                 } else {
@@ -69,27 +75,35 @@ class TicketReservationSystem {
     }
 
     void searchByCustomer(String customerName) {
-        if (head == null) return;
+        if (head == null) {
+			return;
+		}
         Ticket temp = head;
         do {
-            if (temp.customerName.equalsIgnoreCase(customerName))
-                System.out.println("ID: " + temp.ticketId + ", Movie: " + temp.movieName);
+            if (temp.customerName.equalsIgnoreCase(customerName)) {
+				System.out.println("ID: " + temp.ticketId + ", Movie: " + temp.movieName);
+			}
             temp = temp.next;
         } while (temp != head);
     }
 
     void searchByMovie(String movieName) {
-        if (head == null) return;
+        if (head == null) {
+			return;
+		}
         Ticket temp = head;
         do {
-            if (temp.movieName.equalsIgnoreCase(movieName))
-                System.out.println("ID: " + temp.ticketId + ", Customer: " + temp.customerName);
+            if (temp.movieName.equalsIgnoreCase(movieName)) {
+				System.out.println("ID: " + temp.ticketId + ", Customer: " + temp.customerName);
+			}
             temp = temp.next;
         } while (temp != head);
     }
 
     int countTickets() {
-        if (head == null) return 0;
+        if (head == null) {
+			return 0;
+		}
         int count = 0;
         Ticket temp = head;
         do {
@@ -109,7 +123,9 @@ public class TicketMain {
             System.out.println("1.Add 2.Remove 3.Display 4.SearchCustomer 5.SearchMovie 6.Count 0.Exit");
             int choice = sc.nextInt();
             sc.nextLine();
-            if (choice == 0) break;
+            if (choice == 0) {
+				break;
+			}
             switch (choice) {
                 case 1:
                     System.out.print("Ticket ID: ");

@@ -78,7 +78,9 @@ class CircularTaskList {
             } else {
                 head = head.next;
                 tail.next = head;
-                if (current.id == id) current = head;
+                if (current.id == id) {
+					current = head;
+				}
             }
             System.out.println("Task removed.");
             return;
@@ -93,7 +95,9 @@ class CircularTaskList {
                 if (temp == tail) {
                     tail = prev;
                 }
-                if (current == temp) current = head;
+                if (current == temp) {
+					current = head;
+				}
                 System.out.println("Task removed.");
                 return;
             }
@@ -150,7 +154,9 @@ class CircularTaskList {
             temp = temp.next;
         } while (temp != head);
 
-        if (!found) System.out.println("No tasks with priority " + priority);
+        if (!found) {
+			System.out.println("No tasks with priority " + priority);
+		}
     }
 }
 
@@ -193,9 +199,11 @@ public class TaskScheduler {
                     System.out.print("Enter Due Date: ");
                     dueDate = sc.nextLine();
                     Task newTask = new Task(id, name, priority, dueDate);
-                    if (choice == 1) taskList.addAtBeginning(newTask);
-                    else if (choice == 2) taskList.addAtEnd(newTask);
-                    else {
+                    if (choice == 1) {
+						taskList.addAtBeginning(newTask);
+					} else if (choice == 2) {
+						taskList.addAtEnd(newTask);
+					} else {
                         System.out.print("Enter Position: ");
                         position = sc.nextInt();
                         taskList.addAtPosition(newTask, position);

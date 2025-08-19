@@ -1,6 +1,8 @@
 package Stack_and_Queue_and_HashMaps;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class TwoSum{
     public static void main(String[] args) {

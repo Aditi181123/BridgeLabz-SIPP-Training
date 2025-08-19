@@ -1,6 +1,6 @@
 package LinkedList;
 
-import java.util.*;
+import java.util.Scanner;
 
 class Book {
     String title, author, genre;
@@ -21,8 +21,9 @@ class Library {
     Book head = null, tail = null;
 
     void addFirst(Book b) {
-        if (head == null) head = tail = b;
-        else {
+        if (head == null) {
+			head = tail = b;
+		} else {
             b.next = head;
             head.prev = b;
             head = b;
@@ -30,8 +31,9 @@ class Library {
     }
 
     void addLast(Book b) {
-        if (tail == null) head = tail = b;
-        else {
+        if (tail == null) {
+			head = tail = b;
+		} else {
             tail.next = b;
             b.prev = tail;
             tail = b;
@@ -39,62 +41,92 @@ class Library {
     }
 
     void addAtPosition(Book b, int pos) {
-        if (pos <= 1 || head == null) addFirst(b);
-        else {
+        if (pos <= 1 || head == null) {
+			addFirst(b);
+		} else {
             Book temp = head;
-            for (int i = 1; i < pos - 1 && temp.next != null; i++) temp = temp.next;
+            for (int i = 1; i < pos - 1 && temp.next != null; i++) {
+				temp = temp.next;
+			}
             b.next = temp.next;
-            if (temp.next != null) temp.next.prev = b;
+            if (temp.next != null) {
+				temp.next.prev = b;
+			}
             temp.next = b;
             b.prev = temp;
-            if (b.next == null) tail = b;
+            if (b.next == null) {
+				tail = b;
+			}
         }
     }
 
     void remove(int id) {
         Book temp = head;
-        while (temp != null && temp.id != id) temp = temp.next;
-        if (temp == null) return;
-        if (temp.prev != null) temp.prev.next = temp.next;
-        else head = temp.next;
-        if (temp.next != null) temp.next.prev = temp.prev;
-        else tail = temp.prev;
+        while (temp != null && temp.id != id) {
+			temp = temp.next;
+		}
+        if (temp == null) {
+			return;
+		}
+        if (temp.prev != null) {
+			temp.prev.next = temp.next;
+		} else {
+			head = temp.next;
+		}
+        if (temp.next != null) {
+			temp.next.prev = temp.prev;
+		} else {
+			tail = temp.prev;
+		}
     }
 
     void updateAvailability(int id, boolean available) {
-        for (Book b = head; b != null; b = b.next)
-            if (b.id == id) { b.available = available; return; }
+        for (Book b = head; b != null; b = b.next) {
+			if (b.id == id) { b.available = available; return; }
+		}
     }
 
     void searchByTitle(String title) {
         boolean found = false;
-        for (Book b = head; b != null; b = b.next)
-            if (b.title.equalsIgnoreCase(title)) {
+        for (Book b = head; b != null; b = b.next) {
+			if (b.title.equalsIgnoreCase(title)) {
                 print(b); found = true;
             }
-        if (!found) System.out.println("Not found");
+		}
+        if (!found) {
+			System.out.println("Not found");
+		}
     }
 
     void searchByAuthor(String author) {
         boolean found = false;
-        for (Book b = head; b != null; b = b.next)
-            if (b.author.equalsIgnoreCase(author)) {
+        for (Book b = head; b != null; b = b.next) {
+			if (b.author.equalsIgnoreCase(author)) {
                 print(b); found = true;
             }
-        if (!found) System.out.println("Not found");
+		}
+        if (!found) {
+			System.out.println("Not found");
+		}
     }
 
     void displayForward() {
-        for (Book b = head; b != null; b = b.next) print(b);
+        for (Book b = head; b != null; b = b.next) {
+			print(b);
+		}
     }
 
     void displayReverse() {
-        for (Book b = tail; b != null; b = b.prev) print(b);
+        for (Book b = tail; b != null; b = b.prev) {
+			print(b);
+		}
     }
 
     int count() {
         int c = 0;
-        for (Book b = head; b != null; b = b.next) c++;
+        for (Book b = head; b != null; b = b.next) {
+			c++;
+		}
         return c;
     }
 
@@ -112,7 +144,9 @@ public class LibraryManager {
             System.out.println("\n1.AddFirst 2.AddLast 3.AddAtPos 4.Remove 5.UpdateStatus");
             System.out.println("6.SearchTitle 7.SearchAuthor 8.DisplayF 9.DisplayR 10.Count 0.Exit");
             int ch = sc.nextInt();
-            if (ch == 0) break;
+            if (ch == 0) {
+				break;
+			}
 
             switch (ch) {
                 case 1, 2, 3 -> {
@@ -120,9 +154,11 @@ public class LibraryManager {
                     String title = sc.next(), author = sc.next(), genre = sc.next();
                     int id = sc.nextInt(); boolean avail = sc.nextBoolean();
                     Book b = new Book(title, author, genre, id, avail);
-                    if (ch == 1) lib.addFirst(b);
-                    else if (ch == 2) lib.addLast(b);
-                    else {
+                    if (ch == 1) {
+						lib.addFirst(b);
+					} else if (ch == 2) {
+						lib.addLast(b);
+					} else {
                         System.out.print("Position: ");
                         lib.addAtPosition(b, sc.nextInt());
                     }

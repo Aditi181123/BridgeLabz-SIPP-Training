@@ -26,7 +26,7 @@ public class Bubblesort {
                     swapped = true;
                 }
             }
-          
+
             if (!swapped) {
                 break;
             }

@@ -1,6 +1,6 @@
 package Stack_and_Queue_and_HashMaps;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class CircularTour {
 
@@ -47,6 +47,6 @@ public class CircularTour {
         }
 
         return (balance + deficit >= 0) ? start : -1;
-        
+
     }
 }

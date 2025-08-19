@@ -1,9 +1,9 @@
 package Linear_and_BinarySearch;
 
-import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class UserInputToFile {
     public static void main(String[] args) throws IOException {

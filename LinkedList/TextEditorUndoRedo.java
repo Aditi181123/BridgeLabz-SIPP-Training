@@ -77,7 +77,9 @@ public class TextEditorUndoRedo {
             System.out.println("1.Type 2.Undo 3.Redo 4.Display 0.Exit");
             int ch = Integer.parseInt(sc.nextLine());
 
-            if (ch == 0) break;
+            if (ch == 0) {
+				break;
+			}
 
             switch (ch) {
                 case 1:

@@ -86,7 +86,9 @@ class MovieDoublyLinkedList {
 
         if (temp == head) {
             head = temp.next;
-            if (head != null) head.prev = null;
+            if (head != null) {
+				head.prev = null;
+			}
         } else if (temp == tail) {
             tail = temp.prev;
             tail.next = null;
@@ -108,7 +110,9 @@ class MovieDoublyLinkedList {
             }
             temp = temp.next;
         }
-        if (!found) System.out.println("No movies found by director " + director);
+        if (!found) {
+			System.out.println("No movies found by director " + director);
+		}
     }
 
     public void searchByRating(double rating) {
@@ -121,7 +125,9 @@ class MovieDoublyLinkedList {
             }
             temp = temp.next;
         }
-        if (!found) System.out.println("No movies found with rating " + rating);
+        if (!found) {
+			System.out.println("No movies found with rating " + rating);
+		}
     }
 
     public void updateRatingByTitle(String title, double newRating) {
@@ -203,9 +209,11 @@ public class MovieManagementSystem {
                     System.out.print("Enter Rating: ");
                     rating = sc.nextDouble();
                     Movie m = new Movie(title, director, year, rating);
-                    if (choice == 1) list.addAtBeginning(m);
-                    else if (choice == 2) list.addAtEnd(m);
-                    else {
+                    if (choice == 1) {
+						list.addAtBeginning(m);
+					} else if (choice == 2) {
+						list.addAtEnd(m);
+					} else {
                         System.out.print("Enter Position: ");
                         position = sc.nextInt();
                         list.addAtPosition(m, position);

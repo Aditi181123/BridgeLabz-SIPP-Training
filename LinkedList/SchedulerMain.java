@@ -1,6 +1,8 @@
 package LinkedList;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 class Process {
     int id, burst, priority, remaining;
@@ -31,7 +33,9 @@ class RoundRobinScheduler {
     }
 
     public void removeProcess(int id) {
-        if (head == null) return;
+        if (head == null) {
+			return;
+		}
         Process curr = head, prev = tail;
         do {
             if (curr.id == id) {
@@ -40,11 +44,13 @@ class RoundRobinScheduler {
                     tail.next = head;
                 } else {
                     prev.next = curr.next;
-                    if (curr == tail)
-                        tail = prev;
+                    if (curr == tail) {
+						tail = prev;
+					}
                 }
-                if (curr == curr.next)
-                    head = tail = null;
+                if (curr == curr.next) {
+					head = tail = null;
+				}
                 return;
             }
             prev = curr;
@@ -53,7 +59,9 @@ class RoundRobinScheduler {
     }
 
     public void simulate(int quantum) {
-        if (head == null) return;
+        if (head == null) {
+			return;
+		}
 
         int time = 0;
         Map<Integer, Integer> wt = new HashMap<>();
@@ -72,7 +80,9 @@ class RoundRobinScheduler {
                     Process toRemove = curr;
                     curr = curr.next;
                     removeProcess(toRemove.id);
-                    if (head == null) break;
+                    if (head == null) {
+						break;
+					}
                 } else {
                     curr = curr.next;
                 }
@@ -114,7 +124,9 @@ public class SchedulerMain {
             System.out.println("1.Add 2.Display 3.Simulate 0.Exit");
             int ch = Integer.parseInt(sc.nextLine());
 
-            if (ch == 0) break;
+            if (ch == 0) {
+				break;
+			}
 
             switch (ch) {
                 case 1:

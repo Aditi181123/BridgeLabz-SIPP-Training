@@ -1,6 +1,6 @@
 package LinkedList;
 
-import java.util.*;
+import java.util.Scanner;
 
 class Item {
     String name;
@@ -25,31 +25,44 @@ class Inventory {
     }
 
     void addLast(Item item) {
-        if (head == null) head = item;
-        else {
+        if (head == null) {
+			head = item;
+		} else {
             Item temp = head;
-            while (temp.next != null) temp = temp.next;
+            while (temp.next != null) {
+				temp = temp.next;
+			}
             temp.next = item;
         }
     }
 
     void addAtPosition(Item item, int pos) {
-        if (pos <= 1 || head == null) addFirst(item);
-        else {
+        if (pos <= 1 || head == null) {
+			addFirst(item);
+		} else {
             Item temp = head;
-            for (int i = 1; i < pos - 1 && temp.next != null; i++) temp = temp.next;
+            for (int i = 1; i < pos - 1 && temp.next != null; i++) {
+				temp = temp.next;
+			}
             item.next = temp.next;
             temp.next = item;
         }
     }
 
     void removeById(int id) {
-        if (head == null) return;
-        if (head.id == id) head = head.next;
-        else {
+        if (head == null) {
+			return;
+		}
+        if (head.id == id) {
+			head = head.next;
+		} else {
             Item temp = head;
-            while (temp.next != null && temp.next.id != id) temp = temp.next;
-            if (temp.next != null) temp.next = temp.next.next;
+            while (temp.next != null && temp.next.id != id) {
+				temp = temp.next;
+			}
+            if (temp.next != null) {
+				temp.next = temp.next.next;
+			}
         }
     }
 
@@ -86,7 +99,9 @@ class Inventory {
             }
             temp = temp.next;
         }
-        if (!found) System.out.println("Not found");
+        if (!found) {
+			System.out.println("Not found");
+		}
     }
 
     void totalValue() {
@@ -100,7 +115,9 @@ class Inventory {
     }
 
     Item mergeSort(Item node, String key, boolean asc) {
-        if (node == null || node.next == null) return node;
+        if (node == null || node.next == null) {
+			return node;
+		}
         Item mid = getMid(node);
         Item right = mid.next;
         mid.next = null;
@@ -157,7 +174,9 @@ public class InventoryManager {
         while (true) {
             System.out.println("\n1.AddFirst 2.AddLast 3.AddAtPos 4.Remove 5.UpdateQty 6.SearchID 7.SearchName\n8.TotalValue 9.SortByName 10.SortByPrice 11.Display 0.Exit");
             int ch = sc.nextInt();
-            if (ch == 0) break;
+            if (ch == 0) {
+				break;
+			}
 
             switch (ch) {
                 case 1, 2, 3 -> {
@@ -166,9 +185,11 @@ public class InventoryManager {
                     int id = sc.nextInt(), qty = sc.nextInt();
                     double price = sc.nextDouble();
                     Item item = new Item(name, id, qty, price);
-                    if (ch == 1) inv.addFirst(item);
-                    else if (ch == 2) inv.addLast(item);
-                    else {
+                    if (ch == 1) {
+						inv.addFirst(item);
+					} else if (ch == 2) {
+						inv.addLast(item);
+					} else {
                         System.out.print("Position: ");
                         inv.addAtPosition(item, sc.nextInt());
                     }

@@ -1,7 +1,7 @@
 package Linear_and_BinarySearch;
 
-import java.util.Scanner;
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class removeDuplicatesFromString {
     public static String removeDuplicates(String input) {

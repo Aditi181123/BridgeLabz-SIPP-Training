@@ -1,6 +1,6 @@
 package LinkedList;
 
-import java.util.*;
+import java.util.Scanner;
 
 class FriendNode {
     int friendID;
@@ -34,7 +34,9 @@ class SocialMedia {
     User findUser(int id) {
         User temp = head;
         while (temp != null) {
-            if (temp.userID == id) return temp;
+            if (temp.userID == id) {
+				return temp;
+			}
             temp = temp.next;
         }
         return null;
@@ -42,10 +44,13 @@ class SocialMedia {
 
     void addUser(int id, String name, int age) {
         User newUser = new User(id, name, age);
-        if (head == null) head = newUser;
-        else {
+        if (head == null) {
+			head = newUser;
+		} else {
             User temp = head;
-            while (temp.next != null) temp = temp.next;
+            while (temp.next != null) {
+				temp = temp.next;
+			}
             temp.next = newUser;
         }
     }
@@ -57,8 +62,12 @@ class SocialMedia {
             System.out.println("Invalid user(s).");
             return;
         }
-        if (!isFriend(u1.friendList, uid2)) u1.friendList = addToFriendList(u1.friendList, uid2);
-        if (!isFriend(u2.friendList, uid1)) u2.friendList = addToFriendList(u2.friendList, uid1);
+        if (!isFriend(u1.friendList, uid2)) {
+			u1.friendList = addToFriendList(u1.friendList, uid2);
+		}
+        if (!isFriend(u2.friendList, uid1)) {
+			u2.friendList = addToFriendList(u2.friendList, uid1);
+		}
         System.out.println("Friend connection added.");
     }
 
@@ -70,7 +79,9 @@ class SocialMedia {
 
     boolean isFriend(FriendNode head, int fid) {
         while (head != null) {
-            if (head.friendID == fid) return true;
+            if (head.friendID == fid) {
+				return true;
+			}
             head = head.next;
         }
         return false;
@@ -89,8 +100,12 @@ class SocialMedia {
     }
 
     FriendNode removeFromFriendList(FriendNode head, int fid) {
-        if (head == null) return null;
-        if (head.friendID == fid) return head.next;
+        if (head == null) {
+			return null;
+		}
+        if (head.friendID == fid) {
+			return head.next;
+		}
         FriendNode curr = head;
         while (curr.next != null) {
             if (curr.next.friendID == fid) {
@@ -112,7 +127,9 @@ class SocialMedia {
         FriendNode f = u.friendList;
         while (f != null) {
             User friend = findUser(f.friendID);
-            if (friend != null) System.out.print(friend.name + " ");
+            if (friend != null) {
+				System.out.print(friend.name + " ");
+			}
             f = f.next;
         }
         System.out.println();
@@ -120,8 +137,11 @@ class SocialMedia {
 
     void searchByID(int id) {
         User u = findUser(id);
-        if (u == null) System.out.println("User not found.");
-        else System.out.println("Found: " + u.name + ", Age: " + u.age);
+        if (u == null) {
+			System.out.println("User not found.");
+		} else {
+			System.out.println("Found: " + u.name + ", Age: " + u.age);
+		}
     }
 
     void searchByName(String name) {
@@ -162,7 +182,9 @@ class SocialMedia {
         while (f1 != null) {
             if (isFriend(u2.friendList, f1.friendID)) {
                 User mf = findUser(f1.friendID);
-                if (mf != null) System.out.print(mf.name + " ");
+                if (mf != null) {
+					System.out.print(mf.name + " ");
+				}
             }
             f1 = f1.next;
         }
@@ -180,7 +202,9 @@ public class SocialMediaFriendManager {
             System.out.println("5.SearchByID 6.SearchByName 7.MutualFriends 8.CountFriends 0.Exit");
             int ch = sc.nextInt(); sc.nextLine();
 
-            if (ch == 0) break;
+            if (ch == 0) {
+				break;
+			}
 
             switch (ch) {
                 case 1:

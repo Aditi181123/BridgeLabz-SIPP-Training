@@ -1,7 +1,7 @@
 package Linear_and_BinarySearch;
 
-import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -18,8 +18,8 @@ public class CountWordOccurrences {
         String line;
         while ((line = br.readLine()) != null) {
             String[] words = line.split(" ");
-            for (int i = 0; i < words.length; i++) {
-                if (words[i].equals(target)) {
+            for (String word : words) {
+                if (word.equals(target)) {
                     count++;
                 }
             }
