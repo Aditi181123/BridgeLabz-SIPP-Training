@@ -42,7 +42,8 @@ class PetrolVehicle extends Vehicle implements Refuelable {
      this.fuelTankCapacity = fuelTankCapacity;
  }
 
- public void refuel() {
+ @Override
+public void refuel() {
      showDetails();
      System.out.println("Fuel Tank Capacity: " + fuelTankCapacity + " liters");
      System.out.println("Refueling... Please wait.");

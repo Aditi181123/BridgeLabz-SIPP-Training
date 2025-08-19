@@ -23,7 +23,8 @@ class Author extends Book {
         this.bio = bio;
     }
 
-    public void displayInfo() {
+    @Override
+	public void displayInfo() {
         super.displayInfo();
         System.out.println("Author Name: " + name);
         System.out.println("Author Bio: " + bio);

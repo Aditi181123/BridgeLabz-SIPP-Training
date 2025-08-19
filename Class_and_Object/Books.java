@@ -18,7 +18,7 @@ public class Books {
 	public static void main(String args[]) {
 		Books books = new Books("song of fire and ice", "George RR Martin",999.0);
 		books.displayDetails();
-		
-		
+
+
 	}
 }

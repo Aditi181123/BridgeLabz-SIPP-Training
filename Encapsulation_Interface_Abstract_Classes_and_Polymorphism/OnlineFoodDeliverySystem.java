@@ -37,16 +37,19 @@ class VegItem extends FoodItem implements Discountable {
         this.discountApplied = 0;
     }
 
-    public double calculateTotalPrice() {
+    @Override
+	public double calculateTotalPrice() {
         double total = getPrice() * getQuantity();
         return total - (total * discountApplied / 100);
     }
 
-    public void applyDiscount(double percent) {
+    @Override
+	public void applyDiscount(double percent) {
         discountApplied = percent;
     }
 
-    public String getDiscountDetails() {
+    @Override
+	public String getDiscountDetails() {
         return "Veg Discount Applied: " + discountApplied + "%";
     }
 }
@@ -60,16 +63,19 @@ class NonVegItem extends FoodItem implements Discountable {
         this.discountApplied = 0;
     }
 
-    public double calculateTotalPrice() {
+    @Override
+	public double calculateTotalPrice() {
         double total = (getPrice() + extraCharge) * getQuantity();
         return total - (total * discountApplied / 100);
     }
 
-    public void applyDiscount(double percent) {
+    @Override
+	public void applyDiscount(double percent) {
         discountApplied = percent;
     }
 
-    public String getDiscountDetails() {
+    @Override
+	public String getDiscountDetails() {
         return "Non-Veg Discount Applied: " + discountApplied + "%";
     }
 }

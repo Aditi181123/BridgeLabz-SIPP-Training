@@ -18,10 +18,10 @@ public class Area_of_a_Circle {
         System.out.println("Circumference  : " + calculateCircumference());
     }
 
-	
+
 	public static void main(String args[]) {
 		Area_of_a_Circle area= new Area_of_a_Circle(7.0);
 		area.displayDetails();
-		
+
 	}
 }

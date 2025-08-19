@@ -28,14 +28,14 @@ public class LibraryManagement {
                            ", Available: " + (isAvailable ? "Yes" : "No"));
     }
 
-    
+
     public static void main(String[] args) {
     	LibraryManagement book1 = new LibraryManagement("The Alchemist", "Paulo Coelho", 299.0, true);
         book1.displayDetails();
 
-        book1.borrowBook();  
+        book1.borrowBook();
         book1.displayDetails();
 
-        book1.borrowBook(); 
+        book1.borrowBook();
     }
 }

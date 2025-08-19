@@ -2,7 +2,7 @@ package Inheritance;
 
 class Course {
  String courseName;
- int duration; 
+ int duration;
 
  public Course(String courseName, int duration) {
      this.courseName = courseName;
@@ -24,7 +24,8 @@ class OnlineCourse extends Course {
      this.isRecorded = isRecorded;
  }
 
- public void showDetails() {
+ @Override
+public void showDetails() {
      super.showDetails();
      System.out.println("Platform: " + platform);
      System.out.println("Recorded: " + (isRecorded ? "Yes" : "No"));
@@ -41,7 +42,8 @@ class PaidOnlineCourse extends OnlineCourse {
      this.discount = discount;
  }
 
- public void showDetails() {
+ @Override
+public void showDetails() {
      super.showDetails();
      System.out.println("Course Fee: ₹" + fee);
      System.out.println("Discount: " + discount + "%");

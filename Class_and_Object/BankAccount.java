@@ -41,7 +41,7 @@ public class BankAccount {
         acc.displayBalance();
         acc.deposit(2000);
         acc.withdraw(1500);
-        acc.withdraw(20000); 
+        acc.withdraw(20000);
         acc.displayBalance();
     }
 }

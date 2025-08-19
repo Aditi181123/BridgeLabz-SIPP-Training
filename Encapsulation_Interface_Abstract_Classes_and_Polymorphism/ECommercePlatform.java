@@ -37,15 +37,18 @@ class Electronics extends Product implements Taxable {
      super(productId, name, price);
  }
 
- public double calculateDiscount() {
+ @Override
+public double calculateDiscount() {
      return getPrice() * 0.10; // 10% discount
  }
 
- public double calculateTax() {
+ @Override
+public double calculateTax() {
      return getPrice() * 0.18; // 18% tax
  }
 
- public String getTaxDetails() {
+ @Override
+public String getTaxDetails() {
      return "Electronics Tax: 18%";
  }
 }
@@ -55,15 +58,18 @@ class Clothing extends Product implements Taxable {
      super(productId, name, price);
  }
 
- public double calculateDiscount() {
+ @Override
+public double calculateDiscount() {
      return getPrice() * 0.20; // 20% discount
  }
 
- public double calculateTax() {
+ @Override
+public double calculateTax() {
      return getPrice() * 0.12; // 12% tax
  }
 
- public String getTaxDetails() {
+ @Override
+public String getTaxDetails() {
      return "Clothing Tax: 12%";
  }
 }
@@ -73,7 +79,8 @@ class Groceries extends Product {
      super(productId, name, price);
  }
 
- public double calculateDiscount() {
+ @Override
+public double calculateDiscount() {
      return getPrice() * 0.05; // 5% discount
  }
 }

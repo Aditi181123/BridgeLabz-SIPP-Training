@@ -25,12 +25,14 @@ abstract class Employee implements Department {
      this.baseSalary = baseSalary;
  }
 
- 
- public void assignDepartment(String deptName) {
+
+ @Override
+public void assignDepartment(String deptName) {
      this.department = deptName;
  }
 
- public String getDepartmentDetails() {
+ @Override
+public String getDepartmentDetails() {
      return department;
  }
 
@@ -54,7 +56,8 @@ class FullTimeEmployee extends Employee {
      this.bonus = bonus;
  }
 
- public double calculateSalary() {
+ @Override
+public double calculateSalary() {
      return getBaseSalary() + bonus;
  }
 }
@@ -64,12 +67,13 @@ class PartTimeEmployee extends Employee {
  private double hourlyRate;
 
  public PartTimeEmployee(int employeeId, String name, double hourlyRate, int hoursWorked) {
-     super(employeeId, name, 0); 
+     super(employeeId, name, 0);
      this.hoursWorked = hoursWorked;
      this.hourlyRate = hourlyRate;
  }
 
- public double calculateSalary() {
+ @Override
+public double calculateSalary() {
      return hoursWorked * hourlyRate;
  }
 }

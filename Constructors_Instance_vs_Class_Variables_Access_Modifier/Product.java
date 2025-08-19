@@ -2,13 +2,13 @@ package Constructors_Instance_vs_Class_Variables_Access_Modifier;
 
 public class Product {
 
-   
+
     private String productName;
     private double price;
 
     private static int totalProducts = 0;
 
-    
+
     public Product(String productName, double price) {
         this.productName = productName;
         this.price = price;

@@ -37,11 +37,13 @@ class Book extends LibraryItem implements Reservable {
         super(itemId, title, author);
     }
 
-    public int getLoanDuration() {
+    @Override
+	public int getLoanDuration() {
         return 14;
     }
 
-    public void reserveItem(String borrowerName) {
+    @Override
+	public void reserveItem(String borrowerName) {
         if (available) {
             borrower = borrowerName;
             available = false;
@@ -51,7 +53,8 @@ class Book extends LibraryItem implements Reservable {
         }
     }
 
-    public boolean checkAvailability() {
+    @Override
+	public boolean checkAvailability() {
         return available;
     }
 }
@@ -64,11 +67,13 @@ class Magazine extends LibraryItem implements Reservable {
         super(itemId, title, author);
     }
 
-    public int getLoanDuration() {
+    @Override
+	public int getLoanDuration() {
         return 7;
     }
 
-    public void reserveItem(String borrowerName) {
+    @Override
+	public void reserveItem(String borrowerName) {
         if (available) {
             borrower = borrowerName;
             available = false;
@@ -78,7 +83,8 @@ class Magazine extends LibraryItem implements Reservable {
         }
     }
 
-    public boolean checkAvailability() {
+    @Override
+	public boolean checkAvailability() {
         return available;
     }
 }
@@ -91,11 +97,13 @@ class DVD extends LibraryItem implements Reservable {
         super(itemId, title, author);
     }
 
-    public int getLoanDuration() {
+    @Override
+	public int getLoanDuration() {
         return 3;
     }
 
-    public void reserveItem(String borrowerName) {
+    @Override
+	public void reserveItem(String borrowerName) {
         if (available) {
             borrower = borrowerName;
             available = false;
@@ -105,7 +113,8 @@ class DVD extends LibraryItem implements Reservable {
         }
     }
 
-    public boolean checkAvailability() {
+    @Override
+	public boolean checkAvailability() {
         return available;
     }
 }

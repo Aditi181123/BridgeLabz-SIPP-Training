@@ -74,8 +74,8 @@ public class BankApp {
         double saBalance = sc.nextDouble();
         System.out.print("Interest Rate (%): ");
         double saInterest = sc.nextDouble();
-        sc.nextLine(); 
-        
+        sc.nextLine();
+
         System.out.println("\nEnter details for Checking Account:");
         System.out.print("Account Number: ");
         String caNumber = sc.nextLine();
@@ -83,8 +83,8 @@ public class BankApp {
         double caBalance = sc.nextDouble();
         System.out.print("Withdrawal Limit: ");
         double caLimit = sc.nextDouble();
-        sc.nextLine(); 
-        
+        sc.nextLine();
+
         System.out.println("\nEnter details for Fixed Deposit Account:");
         System.out.print("Account Number: ");
         String fdaNumber = sc.nextLine();

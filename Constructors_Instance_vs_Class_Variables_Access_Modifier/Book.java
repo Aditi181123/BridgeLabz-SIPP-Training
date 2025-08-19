@@ -5,7 +5,7 @@ public class Book {
     String author;
     double price;
 
-    
+
     public Book() {
         this.title = "Song of ice and fire";
         this.author = "George RR Martin";
@@ -23,7 +23,7 @@ public class Book {
     }
 
     public static void main(String[] args) {
-        Book defaultBook = new Book();  
+        Book defaultBook = new Book();
         Book javaBook = new Book("Java Programming", "James Gosling", 499.99);
 
         defaultBook.display();

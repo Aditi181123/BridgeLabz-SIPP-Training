@@ -27,7 +27,8 @@ class Chef extends Person implements Worker {
      this.specialty = specialty;
  }
 
- public void performDuties() {
+ @Override
+public void performDuties() {
      showBasicInfo();
      System.out.println("Role: Chef");
      System.out.println("Specialty: " + specialty);
@@ -43,7 +44,8 @@ class Waiter extends Person implements Worker {
      this.tableCount = tableCount;
  }
 
- public void performDuties() {
+ @Override
+public void performDuties() {
      showBasicInfo();
      System.out.println("Role: Waiter");
      System.out.println("Tables Assigned: " + tableCount);

@@ -24,7 +24,8 @@ class ShippedOrder extends Order {
      this.trackingNumber = trackingNumber;
  }
 
- public void getOrderStatus() {
+ @Override
+public void getOrderStatus() {
      super.getOrderStatus();
      System.out.println("Tracking Number: " + trackingNumber);
      System.out.println("Status: Order shipped");
@@ -38,7 +39,8 @@ class DeliveredOrder extends ShippedOrder {
      this.deliveryDate = deliveryDate;
  }
 
- public void getOrderStatus() {
+ @Override
+public void getOrderStatus() {
      super.getOrderStatus();
      System.out.println("Delivery Date: " + deliveryDate);
      System.out.println("Status: Order delivered");

@@ -23,9 +23,9 @@ public class Vehicle {
         registrationFee = newFee;
     }
 
-   
+
     public static void main(String[] args) {
-       
+
         Vehicle.updateRegistrationFee(750.0);
 
         Vehicle vehicle1 = new Vehicle("Aman", "Car");

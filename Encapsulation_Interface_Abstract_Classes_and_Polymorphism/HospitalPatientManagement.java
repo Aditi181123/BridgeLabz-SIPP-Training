@@ -1,6 +1,7 @@
 package Encapsulation_Interface_Abstract_Classes_and_Polymorphism;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 interface MedicalRecord {
     void addRecord(String record);
@@ -43,15 +44,18 @@ class InPatient extends Patient implements MedicalRecord {
         this.records = new ArrayList<>();
     }
 
-    public double calculateBill() {
+    @Override
+	public double calculateBill() {
         return daysAdmitted * dailyCharge;
     }
 
-    public void addRecord(String record) {
+    @Override
+	public void addRecord(String record) {
         records.add(record);
     }
 
-    public List<String> viewRecords() {
+    @Override
+	public List<String> viewRecords() {
         return records;
     }
 }
@@ -66,15 +70,18 @@ class OutPatient extends Patient implements MedicalRecord {
         this.records = new ArrayList<>();
     }
 
-    public double calculateBill() {
+    @Override
+	public double calculateBill() {
         return consultationFee;
     }
 
-    public void addRecord(String record) {
+    @Override
+	public void addRecord(String record) {
         records.add(record);
     }
 
-    public List<String> viewRecords() {
+    @Override
+	public List<String> viewRecords() {
         return records;
     }
 }

@@ -25,8 +25,8 @@ public class CarRental {
     }
 
     public static void main(String[] args) {
-        CarRental defaultRental = new CarRental();  
-        CarRental customRental = new CarRental("Aman Khan", "Honda City", 4); 
+        CarRental defaultRental = new CarRental();
+        CarRental customRental = new CarRental("Aman Khan", "Honda City", 4);
 
         defaultRental.calculateTotalCost();
         customRental.calculateTotalCost();

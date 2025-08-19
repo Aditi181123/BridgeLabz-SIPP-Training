@@ -36,15 +36,18 @@ class Car extends Vehicle implements GPS {
         super(vehicleId, driverName, ratePerKm);
     }
 
-    public double calculateFare(double distance) {
+    @Override
+	public double calculateFare(double distance) {
         return getRatePerKm() * distance + 50;
     }
 
-    public String getCurrentLocation() {
+    @Override
+	public String getCurrentLocation() {
         return currentLocation;
     }
 
-    public void updateLocation(String location) {
+    @Override
+	public void updateLocation(String location) {
         this.currentLocation = location;
     }
 }
@@ -56,15 +59,18 @@ class Bike extends Vehicle implements GPS {
         super(vehicleId, driverName, ratePerKm);
     }
 
-    public double calculateFare(double distance) {
+    @Override
+	public double calculateFare(double distance) {
         return getRatePerKm() * distance;
     }
 
-    public String getCurrentLocation() {
+    @Override
+	public String getCurrentLocation() {
         return currentLocation;
     }
 
-    public void updateLocation(String location) {
+    @Override
+	public void updateLocation(String location) {
         this.currentLocation = location;
     }
 }
@@ -76,15 +82,18 @@ class Auto extends Vehicle implements GPS {
         super(vehicleId, driverName, ratePerKm);
     }
 
-    public double calculateFare(double distance) {
+    @Override
+	public double calculateFare(double distance) {
         return getRatePerKm() * distance + 20;
     }
 
-    public String getCurrentLocation() {
+    @Override
+	public String getCurrentLocation() {
         return currentLocation;
     }
 
-    public void updateLocation(String location) {
+    @Override
+	public void updateLocation(String location) {
         this.currentLocation = location;
     }
 }

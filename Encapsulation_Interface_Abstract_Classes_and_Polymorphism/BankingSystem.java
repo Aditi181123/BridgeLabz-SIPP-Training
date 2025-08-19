@@ -54,15 +54,18 @@ class SavingsAccount extends BankAccount implements Loanable {
         this.interestRate = interestRate;
     }
 
-    public double calculateInterest() {
+    @Override
+	public double calculateInterest() {
         return getBalance() * interestRate / 100;
     }
 
-    public void applyForLoan(double amount) {
+    @Override
+	public void applyForLoan(double amount) {
         System.out.println("Savings account loan request submitted for ₹" + amount);
     }
 
-    public double calculateLoanEligibility() {
+    @Override
+	public double calculateLoanEligibility() {
         return getBalance() * 0.5;
     }
 }
@@ -75,15 +78,18 @@ class CurrentAccount extends BankAccount implements Loanable {
         this.interestRate = interestRate;
     }
 
-    public double calculateInterest() {
+    @Override
+	public double calculateInterest() {
         return getBalance() * interestRate / 100;
     }
 
-    public void applyForLoan(double amount) {
+    @Override
+	public void applyForLoan(double amount) {
         System.out.println("Current account loan request submitted for ₹" + amount);
     }
 
-    public double calculateLoanEligibility() {
+    @Override
+	public double calculateLoanEligibility() {
         return getBalance() * 0.3;
     }
 }

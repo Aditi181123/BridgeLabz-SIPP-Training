@@ -23,7 +23,8 @@ class Thermostat extends Device {
      this.temperatureSetting = temperatureSetting;
  }
 
- public void displayStatus() {
+ @Override
+public void displayStatus() {
      super.displayStatus();
      System.out.println("Temperature Setting: " + temperatureSetting + "°C");
  }
