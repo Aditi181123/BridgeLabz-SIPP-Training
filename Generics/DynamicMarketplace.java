@@ -94,3 +94,4 @@ public class DynamicMarketplace {
         MarketplaceUtils.displayCatalog(catalog);
     }
 }
+
